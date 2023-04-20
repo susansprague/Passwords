@@ -8,10 +8,12 @@ function generatePassword() {
   let chars = "";
   let passwordLength = parseInt(window.prompt("Please enter your password length"));
   console.log(passwordLength)
-if(passwordLength<8 || passwordLength>128 || isNaN(passwordLength)) {
+// Password length needs to be between 8 and 128 characters
+  if(passwordLength<8 || passwordLength>128 || isNaN(passwordLength)) {
   alert("Please enter a length between 8 and 128");
   return "Please try again"
 } 
+// Password has to contain the following elements 
 if(confirm ("Would you like lowercase letters?")) {
   chars += "abcdefghijklmnopqrstuvwxyz";
 }
@@ -24,6 +26,7 @@ if(confirm ("Would you like lowercase letters?")) {
   if (confirm("Would you like specials?")) {
     chars += "!@#$%&*()";
   } 
+ // Password does not meet requirements 
   console.log(chars)
   if (chars==="") {
     alert("Must choose at least one character type")
